@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+<!--  
+<bean id ="ADD" class ="model.Address"  scope = "singleton">
+	<constructor-arg value = "pune" type ="java.lang.String" index = "0"/>
+	<constructor-arg value = "Maharastra" type ="java.lang.String" index = "1"/>
+	<constructor-arg value = "411057" type ="java.lang.String" index = "2"/>
+</bean>
+
+-->
+<bean id ="ADD" class ="model.Address"  scope = "singleton">
+	
+	<property name = "city" value = "Mumbai"/>
+	<property name = "state" value = "MH"/>
+	<property name = "pincode" value = "411027"/>
+	
+</bean>
+
+</beans>

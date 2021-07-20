@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 
+    <!-- To activate the @Required annotation in spring -->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+     
+		 <bean id ="UI" class ="service.UserIdentity" scope = "singleton">
+		 <property name = "name" value = "PPDAVID"/>
+		 <property name = "age" value = "30"/> 
+		 <property name = "email" value = "ABC@bipin.com"/> 
+		 
+		</bean>
+	
+		
+	 
+</beans>

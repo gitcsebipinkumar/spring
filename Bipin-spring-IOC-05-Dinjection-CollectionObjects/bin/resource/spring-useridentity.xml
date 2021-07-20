@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+
+	<bean id="ADD01" class="model.Address" scope="singleton">
+
+		<property name="city" value="Mumbai" />
+		<property name="state" value="DL" />
+		<property name="pincode" value="1234" />
+
+	</bean>
+
+	<bean id="ADD02" class="model.Address" scope="singleton">
+
+		<property name="city" value="PUNE" />
+		<property name="state" value="DL" />
+		<property name="pincode" value="5678" />
+
+	</bean>
+
+	<bean id="ADD03" class="model.Address" scope="singleton">
+
+		<property name="city" value="DELHI" />
+		<property name="state" value="DL" />
+		<property name="pincode" value="13376" />
+
+	</bean>
+
+<!-- results in a useridentity refrence in useridentity bean call -->
+
+	<bean id="UI" class="service.UserIdentity" scope="singleton">
+		<property name="usernames">
+			<list>
+				<value> user01</value>
+				<value> user03</value>
+				<value> user04</value>
+			</list>
+		</property>
+
+<!-- results in a setAddress refrence in useridentity bean call -->
+		<property name="address">
+			<list>
+				<ref bean="ADD01"></ref>
+				<ref bean="ADD02"></ref>
+				<ref bean="ADD03"></ref>
+			</list>
+		</property>
+		
+		<property name="phonenumber">
+			<set>
+				<value> 989898</value>
+				<value> 898989</value>
+				<value> 898989</value>
+				<value> 222222</value>
+			</set>
+		</property>
+	
+<!-- results in a setAddressMap(java.util.Map) call -->	
+		<property name="colour">
+			<map>
+				<entry key ="user01" value ="RED"/>
+				<entry key ="user02" value ="YELLOW"/>
+				<entry key ="user03" value ="Green"/>
+				<entry key ="user04" value ="PINK"/>
+			</map>
+		</property>
+<!-- results in a setAddressProp(java.util.Properties) call -->
+		<property name ="dbproperties">
+			 <props>
+            <prop key = "driver">JDBC</prop>
+            <prop key = "username">bipin</prop>
+            <prop key = "url">bipin.testdb.com</prop>
+            <prop key = "password">********fifi</prop>
+         
+         </props>
+		
+		</property>
+		
+		
+	</bean>			
+</beans>

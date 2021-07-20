@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id ="tt" class ="service.Name"  scope = "singleton">
+	<property name="gender"  value ="MALE"> </property>
+		<property name="id"  value ="23"> </property>
+			<property name="salary"  value ="20000"> </property>
+				<property name="phone"  value ="+91-048073"> </property>
+
+</bean>
+</beans>

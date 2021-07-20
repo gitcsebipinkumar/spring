@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        
+  <!--  For properties files --> 
+  <context:property-placeholder location="classpath:resource/dbdriver.properties" />
+    
+
+
+<!--  Need to add schema based validation for properties file -->
+	<bean id="datasource" class="service.BasicDataSource" scope="singleton">
+		
+		<property name="driverClassName" value ="${db.driverClassName}"/>
+		<property name="url" value ="${db.url}"/>
+		<property name="userName" value ="${db.username}"/>
+		<property name="pwd" value ="${db.password}"/>
+		
+	</bean>			
+</beans>
